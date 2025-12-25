@@ -161,3 +161,30 @@ With additional time, the solution could be enhanced by:
 
 ---
 
+
+
+---
+# 📉 AI Task 2: Model Evaluation & Correction
+
+## 1. Executive Summary
+The original notebook reported **100% Accuracy**, which was found to be misleading and incorrect. My analysis confirms this score was achieved solely through **Data Leakage**. After correcting the leakage, the model's true performance dropped to near-zero, proving the dataset consists of random noise with no predictive signal.
+
+## 2. Analysis of the Original Failed Solution
+Upon reviewing the provided notebook, I identified two critical flaws:
+* **Data Leakage (The Primary Error):** The dataset creation step included `feature_4`, which was set equal to the target variable `y`.The model was not predicting failures; it was simply reading the answer key from this column.
+* **Misleading Metric:** The dataset is highly imbalanced with only ~2% failures (120 out of 6000). Even without leakage, a model could ignore all failures and still achieve 98% accuracy. [cite_start]Relying on "Accuracy" concealed the model's inability to detect actual failures.
+
+## 3. Improvements Applied
+To provide a realistic and reliable evaluation, I implemented the following changes:
+* **Removed Leakage:** I excluded `feature_4` from the training data. The model must now rely on the actual sensor features (`feature_1`, `feature_2`, `feature_3`).
+* **Stratified Splitting:** I used `stratify=y` during the train/test split. ]This ensures that the test set contains a representative sample of failures (approx. 24) rather than zero, which could happen with random splitting on such skewed data.
+* **Balanced Weights:** I configured the Random Forest with `class_weight='balanced'` to force the model to pay attention to the minority class (failures).
+* **Visual Diagnosis:** I added a comprehensive dashboard (ROC Curve, Confusion Matrix, Feature Scatter) to visually prove that the input features are random noise.
+
+## 4. Final Diagnosis & Results
+* **Recall: 0.00** (Expected). [cite_start]Even with weighted training and threshold adjustments, the model could not distinguish failures from normal operations.
+* **Visual Proof:** The ROC curve shows an AUC of ~0.50 (Random Chance), and the feature scatter plots show that "Failure" points are randomly mixed with "Normal" points [cite: 240-241].
+* **Conclusion:** The features provided are uncorrelated random noise. The "success" of the original model was entirely artificial. The correct, reliable evaluation shows that this data cannot predict machine failures.
+* <img width="1982" height="981" alt="image" src="https://github.com/user-attachments/assets/aeacc598-144e-4053-bc64-cf74899079a8" />
+---
+
