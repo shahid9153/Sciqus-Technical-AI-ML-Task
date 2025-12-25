@@ -121,7 +121,7 @@ Instead of optimizing for raw accuracy, evaluation focused on **decision-critica
   <img width="939" height="836" alt="image" src="https://github.com/user-attachments/assets/ca56ff96-b058-4184-a551-c595d7947259" />
 
 - Scatter Plots → Visual separation of failure states
-- <img width="841" height="547" alt="image" src="https://github.com/user-attachments/assets/c41ec9bb-06dc-45dd-8671-d8d50ff13c9e" />
+- <img width="973" height="547" alt="image" src="https://github.com/user-attachments/assets/ea1a480f-2f47-46f2-9e03-f7e9d4b4cb4b" />
 
 
 ✔️ The evaluation strategy mirrors **real-world deployment priorities**, not leaderboard optimization.
