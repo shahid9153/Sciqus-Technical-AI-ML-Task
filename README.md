@@ -165,10 +165,3 @@ With additional time, the solution could be enhanced by:
 
 ---
 
-
-
-## 🚀 5. Future Improvements
-Given more time, the solution could be improved by:
-1. **Physical Feature Engineering:** Creating new variables like "Power" (Torque × Speed) or "Temperature Delta" (Process Temp - Air Temp).
-2. **SMOTE:** Using Synthetic Minority Over-sampling to generate artificial failure samples and further improve the decision boundary.
-3. **Cross-Validation:** Implementing K-Fold cross-validation to ensure the model's stability across different subsets of data.
