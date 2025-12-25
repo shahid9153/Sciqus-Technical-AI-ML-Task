@@ -131,9 +131,6 @@ Instead of optimizing for raw accuracy, evaluation focused on **decision-critica
 ## 🧠 5. Insights & Interpretation
 
 Feature importance analysis reveals:
-<img width="973" height="547" alt="image" src="https://github.com/user-attachments/assets/ea1a480f-2f47-46f2-9e03-f7e9d4b4cb4b" />
-
-
 - Which sensors contribute most to failure prediction
 - How physical stress factors dominate failure risk
 
